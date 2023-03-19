@@ -1,7 +1,4 @@
-# python3
-
-
-def heapify(data, i, n, swaps):
+def sift_down(data, i, n, swaps):
     min_index = i
     l = 2*i + 1
     r = 2*i + 2
@@ -15,7 +12,7 @@ def heapify(data, i, n, swaps):
     if i != min_index:
         swaps.append((i, min_index))
         data[i], data[min_index] = data[min_index], data[i]
-        heapify(data, min_index, n, swaps)
+        sift_down(data, min_index, n, swaps)
 
 
 def build_heap(data):
@@ -23,7 +20,7 @@ def build_heap(data):
     n = len(data)
 
     for i in range(n//2, -1, -1):
-        heapify(data, i, n, swaps)
+        sift_down(data, i, n, swaps)
 
     return swaps
 
