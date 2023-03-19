@@ -28,18 +28,15 @@ def build_heap(data):
 def main():
     try:
         n = int(input())
+        print("n =", n)
         data = list(map(int, input().split()))
+        print("data =", data)
         assert len(data) == n
-
         swaps = build_heap(data)
-
         print(len(swaps))
         for i, j in swaps:
             print(i, j)
-
-    except ValueError:
-        print("Invalid input")
-    except AssertionError:
+    except (ValueError, AssertionError):
         print("Invalid input")
     except KeyboardInterrupt:
         print("\nProgram terminated by user.")
