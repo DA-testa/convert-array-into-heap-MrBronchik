@@ -37,8 +37,10 @@ def main():
         for i, j in swaps:
             print(i, j)
 
-    except (ValueError, AssertionError):
+    except ValueError:
         print("Invalid input")
+    except AssertionError:
+        print("Input data doesn't meet the expected conditions")
 
 
 if __name__ == "__main__":
