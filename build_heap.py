@@ -40,7 +40,9 @@ def main():
     except ValueError:
         print("Invalid input")
     except AssertionError:
-        print("Input data doesn't meet the expected conditions")
+        print("Invalid input")
+    except KeyboardInterrupt:
+        print("\nProgram terminated by user.")
 
 
 if __name__ == "__main__":
